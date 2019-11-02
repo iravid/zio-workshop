@@ -17,12 +17,21 @@ import com.amazonaws.services.s3.model.ListObjectsV2Request
 object Workshop2 extends App {
   def run(args: List[String]): ZIO[ZEnv, Nothing, Int] = UIO.succeed(0)
 
+  // Example code will be at https://github.com/iravid/zio-workshop
 
 
   ///////////////////////////////////////////////////////
   // ZManaged
 
+  trait KafkaConsumer {
+    def close: UIO[Unit]
+  }
+  def makeKafka: UIO[KafkaConsumer] = ???
 
+  trait HTTPServer {
+    def close: UIO[Unit]
+  }
+  def makeHTTP: UIO[HTTPServer] = ???
 
 
 
